@@ -1,0 +1,13 @@
+<script>
+  function movimiento_go(elemento){
+      var posicion = $(elemento).position().top;
+      $('html,body').animate({scrollTop: posicion}, 500);
+      return;
+  }
+</scritp>
+
+<!--Unsadolo -->
+
+<p onClick="#content">Ir Alla</p>
+
+<div id="content">Contenedor</div>
