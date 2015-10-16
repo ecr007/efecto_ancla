@@ -1,13 +1,20 @@
 <script type="text/javascript">
-  function movimiento_go(elemento){
-      var posicion = $(elemento).position().top;
-      $('html,body').animate({scrollTop: posicion}, 500);
-      return;
-  }
+  $('.ancla').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash;
+	    var $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 900, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
 </script>
 
 <!--Unsadolo -->
 
-<p onClick="movimiento_go(#content);">Ir Alla</p>
+<a href="#content" class="ancla">Ir Alla</a>
 
 <div id="content">Contenedor</div>
